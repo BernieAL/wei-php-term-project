@@ -138,7 +138,7 @@ margin: 5px;;
           options.success = function(response){
                     
 
-            
+            //console.log(response)
               // Worked:
               if (response == 'CORRECT') {
                 
