@@ -23,7 +23,7 @@ $password = $_GET['password'];
 $db_user_pass = "test";
 
 
-echo 'CORRECT';
+echo  'CORRECT';
 
    
 ?>
