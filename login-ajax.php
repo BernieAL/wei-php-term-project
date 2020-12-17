@@ -18,23 +18,13 @@
 //$pass = $_GET["password"];
 //$user_type = $_GET["selected_choice"];
 
-$userID = "123123";
-$password = "test";
+$userID = $_GET['user_ID'];
+$password = $_GET['test'];
+
+$db_user_pass = "test";
 
 
-if(isset($userID)){
-
-   $q = "SELECT Password FROM users WHERE ID=$userID";
-   $db_user_pass = mysqli_query($dbc,$q);
-   if($password == $db_user_pass) {
-     echo 'CORRECT';
-   } else {
-      echo $db_user_pass;
-   }
-} else {
-   echo 'INCORRECT';
-}
-
+echo 'CORRECT';
 
    
 ?>
