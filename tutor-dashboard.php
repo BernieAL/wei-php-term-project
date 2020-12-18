@@ -47,7 +47,7 @@ session_start();
     
      
      //perform query to get saved password for user from DB
-      $q = "SELECT * FROM tutors WHERE ID = 123123";
+      $q = "SELECT * FROM tutors WHERE ID = $userID";
       $result = mysqli_query($dbc,$q);
         
       if($result){  
