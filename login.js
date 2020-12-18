@@ -81,39 +81,21 @@ function changePage(selected_choice){
 	if(selected_choice == 'student'){
 		console.log('STUDENT LOG ON')
 		console.log('routing to new page')
-		
-		$.ajax({
-			url: 'schedule.php',
-			type: 'get',
-			success: function(response){
 			window.location.href = "schedule.php";
-			}
-		});
+		
+	
 
 	} else if(selected_choice == 'professor'){
 		console.log('PROFESSOR LOG ON')
 		console.log('routing to new page')
-		
-		$.ajax({
-			url: 'schedule.php',
-			type: 'get',
-			success: function(response){
 			window.location.href = "schedule.php";
-			}
-		});
+		
 
 	} else if(selected_choice == 'tutor'){
 		console.log('TUTOR LOG ON')
 		console.log('routing to new page')
-		
-		$.ajax({
-			url: 'tutor-dashboard.php',
-			type: 'get',
-			data: user_ID,
-			success: function(response){
 			window.location.href = "tutor-dashboard.php";
-			}
-		});
+			
 	}
 	
 
