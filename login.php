@@ -47,7 +47,7 @@ margin: 5px;;
 <h2>Login Form</h2>
 
 
-<p id="results">This is results section: </p>
+<p id="results"></p>
 
 <div id="form-div">
 <form action="login.php" method="post" id="login-form">

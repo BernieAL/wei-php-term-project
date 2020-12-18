@@ -18,7 +18,7 @@ session_start();
 
 
   <?php
-    include('docs/includes/header.html');
+    include('docs/includes/header.php');
   ?>
   
   <br></br>

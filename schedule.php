@@ -27,7 +27,7 @@ color: #300ACC;
 
 <?php
  
- include('docs/includes/header.html');
+ include('docs/includes/header.php');
 ?>
 
 <br>
@@ -36,22 +36,33 @@ color: #300ACC;
 
 <p>Please choose a tutor to see available times</p>
 
-<input type="radio" id="tutor" name="selectec" value="Professor Don-Wei">
+<input type="radio" id="tutor" name="Don Wei" value="Don Wei">
 <label for="name">Professor Don-Wei</label><br>
 
 <input type="radio" id="tutor" name="Rosalie" value="Rosalie">
 <label for="name">Rosalie Ramos</label><br>
 
-<input type="radio" id="tutor" name="Bernardino" value="Bernardino Almanzar">
+<input type="radio" id="tutor" name="Bernardino" value="Bernardino">
 <label for="name">Bernardino Almanzar</label><br>
 
-<input type="radio" id="tutor" name="Professor Mark Karol" value="Professor Mark Karol">
+<input type="radio" id="tutor" name="Professor Mark Karol" value="Mark Karol">
 <label for="name">Professor Mark Karol</label>
 
-<p><input type="submit" value= "Next" name="submit"></p>
+<p><input type="submit" value= "GET" name="submit"></p>
 
 </form>
-<p id="results"></p>
+<p id='tutor-results'></p>
+<table id= "results" style="width:100%">
+  <tr>
+    <th>ID</th>
+    <th>Subject</th>
+    <th>Day</th> 
+    <th>Times</th>
+  </tr>
+  
+</table>
+
+
 <script>
 
 $(document).ready(function(){ 
@@ -77,9 +88,31 @@ $(document).ready(function(){
 			data: data,
 			dataType: 'json',
 			success: function(response){
-				
-                var returned  = JSON.parse(response);   
-                $("#results").append(returned);
+                
+                var len = response.length;
+                
+                
+                $("#tutor-results").append("RESULTS FOR " + selected_choice +": ");
+                for(var i=0; i<len; i++){
+                    var id = response[i].id;
+                    var subject = response[i].subject;
+                    var day = response[i].day;
+                    var times = response[i].times;
+
+                    var tr_str = "<tr>" +
+                       "<td align='center'>" + id + "</td>" +
+                        "<td align='center'>" + subject + "</td>" +
+                        "<td align='center'>" + day + "</td>" +
+                        "<td align='center'>" + times + "</td>" +
+                        "</tr>";
+                    
+                    $("#results").append(tr_str);
+                }
+
+
+
+                //var returned  = JSON.parse(response);   
+                //$("#results").append(returned);
                 }
             });
             return false;

@@ -12,16 +12,15 @@
   <body>
 
 <?php
-    include('docs/includes/header.html');
-
-
-
-    //check if session exists already, if it does, then get the name of the person already logged in and display 
+    include('docs/includes/header.php');
+  
+      //check if session exists already, if it does, then get the name of the person already logged in and display 
       //with greeting
-
 ?>
 
-<br><br><p>Welcome to the official site of finding the best available tutor for you!
+<br></br>
+<br></br>
+<p text-align="center">Welcome to the official site of finding the best available tutor for you!
 Here at Find a Tutor, we provide you the best tools to find and schedule tutors of your 
 choice! </p>
 

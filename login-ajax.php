@@ -40,6 +40,7 @@ if(isset($_GET['user_ID'], $_GET['password'])){
      
       $_SESSION['user_ID'] = $userID;
       $_SESSION['role'] = $selected_choice;
+      
 
       
 
