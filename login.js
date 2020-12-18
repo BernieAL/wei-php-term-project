@@ -57,8 +57,13 @@ $(document).ready(function(){
 				var returned  = JSON.parse(response);
 				if(returned == "CORRECT"){
 					console.log("YOU ARE LOGGED IN");
+					$('#results').text("YOU ARE LOGGED IN");
+
+					changePage(selected_choice);
+
 				} else if(returned == "INCORRECT"){
 					console.log("There was a problem with credentials");
+					$('#results').text("There was a problem with credentials");
 				}
 			}
 		});
@@ -66,17 +71,16 @@ $(document).ready(function(){
 		// Return false to prevent an actual form submission:
 		 return false;
 
-
-
-
-		   
-
 	});  // END form handler
 
 }); // END .ready
 //=======================================================
 
-
+function changePage(selected_choice){
+	if(selected_choice == 'student'){
+		console.log('STUDENT LOG ON')
+	}
+}
 
 
 //=======================================================

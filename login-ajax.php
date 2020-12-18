@@ -16,23 +16,22 @@
 //$userID = $_GET['user_ID'];
 //$password = $_GET['password'];
 
-
-
-//$query = "SELECT password FROM users WHERE ID = '$userID'";
-//$result = mysqli_query($dbc,$query);
-
-//while($row = mysqli_fetch_array($result)){
-  // $id = $row['ID'];
    
 //}
 
-$db_user_pass = 'test';
+
 
 if(isset($_GET['user_ID'], $_GET['password'])){
    
    $userID = $_GET['user_ID'];
    $password = $_GET['password'];
 
+   //perform query to get saved password for user from DB
+      $q = "SELECT password FROM users WHERE ID = '$userID'";
+      $result = mysqli_query($dbc,$q);
+      $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+      $db_user_pass = $row['password'];
+      
    if($password == $db_user_pass){
       $myObj = "CORRECT";
       $response = json_encode($myObj);
