@@ -22,7 +22,8 @@
 if(isset($_GET['selected_choice'])){
    
 	$return_arr = array();
-    $selected_choice = $_GET['selected_choice'];
+	$selected_choice = $_GET['selected_choice'];
+	
 	
 
    //perform query to get saved password for user from DB

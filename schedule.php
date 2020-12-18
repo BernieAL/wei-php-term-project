@@ -51,7 +51,10 @@ color: #300ACC;
 <p><input type="submit" value= "GET" name="submit"></p>
 
 </form>
+
+
 <p id='tutor-results'></p>
+
 <table id= "results" style="width:100%">
   <tr>
     <th>ID</th>
@@ -98,7 +101,7 @@ $(document).ready(function(){
                     var subject = response[i].subject;
                     var day = response[i].day;
                     var times = response[i].times;
-
+                    
                     var tr_str = "<tr>" +
                        "<td align='center'>" + id + "</td>" +
                         "<td align='center'>" + subject + "</td>" +

@@ -31,6 +31,14 @@ if(isset($_GET['user_ID'], $_GET['password'])){
       $q = "SELECT password FROM users WHERE ID = '$userID'";
       $result = mysqli_query($dbc,$q);
       $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+
+      $t = "SELECT Name FROM users WHERE ID = '$userID'";
+      $result2 = mysqli_query($dbc,$t);
+      $row2 = mysqli_fetch_array($result2, MYSQLI_ASSOC);
+      $name = $row2['Name'];
+      $_SESSION['Name'] = $name;
+      
+
       $db_user_pass = $row['password'];
       
    if($password == $db_user_pass){
@@ -40,6 +48,7 @@ if(isset($_GET['user_ID'], $_GET['password'])){
      
       $_SESSION['user_ID'] = $userID;
       $_SESSION['role'] = $selected_choice;
+      
       
 
       

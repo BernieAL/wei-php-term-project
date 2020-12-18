@@ -13,6 +13,18 @@ session_start();
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>Find a Tutor</title>
+
+
+
+<style>
+
+  #tutor-page-title{
+    text-align: center;
+  }
+
+</style>
+
+
   </head>
   <body>
 
@@ -22,9 +34,13 @@ session_start();
   ?>
   
   <br></br>
+  <br></br> 
+  <br></br>
   
-  
-  <h1> Tutor dashboard </h1>
+  <h1 id="tutor-page-title"> Tutor dashboard </h1>
+  <br></br> 
+ 
+  <?php   echo'<h3> Dashboard for Tutor: ' .  $_SESSION['Name'] .'</h3>'?>
   <br></br>
   <input type="button" id="tutor" name="menu_selection" value="Add Time">
   <label for="name"></label><br>
@@ -52,6 +68,7 @@ session_start();
         
       if($result){  
          
+        $name = $_SESSION['Name'];
       // Table header.
  	    echo '<table align="center" cellspacing="3" cellpadding="3" width="75%">
             <tr>
