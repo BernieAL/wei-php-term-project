@@ -58,8 +58,8 @@ $(document).ready(function(){
 				if(returned == "CORRECT"){
 					console.log("YOU ARE LOGGED IN");
 					$('#results').text("YOU ARE LOGGED IN");
-
-					changePage(selected_choice);
+					
+					changePage(selected_choice,user_ID);
 
 				} else if(returned == "INCORRECT"){
 					console.log("There was a problem with credentials");
@@ -77,11 +77,50 @@ $(document).ready(function(){
 //=======================================================
 
 function changePage(selected_choice){
+	
 	if(selected_choice == 'student'){
 		console.log('STUDENT LOG ON')
-	}
-}
+		console.log('routing to new page')
+		
+		$.ajax({
+			url: 'schedule.php',
+			type: 'get',
+			success: function(response){
+			window.location.href = "schedule.php";
+			}
+		});
 
+	} else if(selected_choice == 'professor'){
+		console.log('PROFESSOR LOG ON')
+		console.log('routing to new page')
+		
+		$.ajax({
+			url: 'schedule.php',
+			type: 'get',
+			success: function(response){
+			window.location.href = "schedule.php";
+			}
+		});
+
+	} else if(selected_choice == 'tutor'){
+		console.log('TUTOR LOG ON')
+		console.log('routing to new page')
+		
+		$.ajax({
+			url: 'tutor-dashboard.php',
+			type: 'get',
+			data: user_ID,
+			success: function(response){
+			window.location.href = "tutor-dashboard.php";
+			}
+		});
+	}
+	
+
+
+
+}
+//EnD CHANGE PAGE
 
 //=======================================================
 	/* ALTERNATE WAY TO MAKE AJAX REQUET  */

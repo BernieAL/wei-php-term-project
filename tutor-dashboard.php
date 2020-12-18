@@ -15,8 +15,25 @@
     include('docs/includes/header.html');
 
 
-    //"welcome Name" 
+   if(isset($_GET['user_ID']){
+   
+      $userID = $_GET['user_ID'];
+      $password = $_GET['password'];
 
+      //perform query to get saved password for user from DB
+        $q = "SELECT password FROM tutors WHERE ID = '$userID'";
+        $result = mysqli_query($dbc,$q);
+        
+        while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+          // get all values for this specific tutor
+        }
+      }
+echo json_encode($response);
+
+?>
+
+
+    
 ?>
 
 <h1> Tutor dashboard </h1>
@@ -25,14 +42,13 @@
 <input type="button" id="tutor" name="menu_selection" value="Add Time">
 <label for="name">Rosalie Ramos</label><br>
 
-<input type="radio" id="tutor" name="menu_selection" value="Delete Time">
-<label for="name">Bernardino Almanzar</label><br>
+<input type="button" id="tutor" name="menu_selection" value="Remove Time">
+<label for="name"></label><br>
 
-<input type="radio" id="tutor" name="menu_selection" value="Add Subject">
-<label for="name">Professor Mark Karol</label>
+<input type="button" id="tutor" name="menu_selection" value="Add Subject">
+<label for="name"></label><br>
 
-<input type="radio" id="tutor" name="menu_selection" value="Remove Subject">
-<label for="name">Professor Mark Karol</label>
+
 
 
 <!-- //add time, remove time, add subject -->
