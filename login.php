@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="js/login.js"></script> 
 
 <!--CSS-->
 <style>
@@ -47,10 +47,12 @@ margin: 5px;;
 <h2>Login Form</h2>
 
 
-<p id="results"></p>
+<p id="results">This is results section: </p>
+
+<div id="form-div">
 <form action="login.php" method="post" id="login-form">
 
-        <div class="container">
+     
         <label for="username"><b>Username</b></label>
         <input type="text" id="user_ID" placeholder="Enter ID" name="user_ID" required>
 
@@ -66,9 +68,9 @@ margin: 5px;;
         <br></br>
         
         <button type="submit" >Login</button>
-        </div>
-
+        
 </form>
+</div>
 
 
 <!--  login.js jquery to handle form submission and then make ajax request to
@@ -79,7 +81,7 @@ margin: 5px;;
  
  -->
 
-<script type="text/javascript" src="js/login.js"></script> 
+
 
     </body>
     </html>

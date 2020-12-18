@@ -12,18 +12,35 @@
  require ('mysqli_connect.php'); // Connect to the db.
  
 
-
-//$userID = $_GET["user_ID"];
-//$pass = $_GET["password"];
-//$user_type = $_GET["selected_choice"];
-
-$userID = $_GET['user_ID'];
-$password = $_GET['password'];
-
-$db_user_pass = "test";
+//$return_arr = array();
+//$userID = $_GET['user_ID'];
+//$password = $_GET['password'];
 
 
-echo  'CORRECT';
 
+//$query = "SELECT password FROM users WHERE ID = '$userID'";
+//$result = mysqli_query($dbc,$query);
+
+//while($row = mysqli_fetch_array($result)){
+  // $id = $row['ID'];
    
+//}
+
+$db_user_pass = 'test';
+
+if(isset($_GET['user_ID'], $_GET['password'])){
+   
+   $userID = $_GET['user_ID'];
+   $password = $_GET['password'];
+
+   if($password == $db_user_pass){
+      $myObj = "CORRECT";
+      $response = json_encode($myObj);
+   } else {
+      $myObj = "INCORRECT";
+      $response = json_encode($myObj);
+   }
+}
+echo json_encode($response);
+
 ?>

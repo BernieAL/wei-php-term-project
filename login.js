@@ -1,5 +1,6 @@
 
 
+
 // Script 15.10 - login.js
 
 	 // This script is included by login.php.
@@ -7,91 +8,95 @@
 	 // This script then makes an Ajax request of login_ajax.php.
 	
 	 // Do something when the document is ready:
-$(function() {
+$(document).ready(function(){ 
      
       console.log("made it to the javascript from login.php");
 	 
 	  // Assign an event handler to the form:
        $('#login-form').submit(function(event) {
-          //event.preventDefault();
-
-        console.log("form has been submitted");
-          // Initialize some variables:
-          var user_ID, password,selected_choice;
-      // Validate the userID:
+		  	event.preventDefault();
+			console.log("form has been submitted");
+			
+			// Initialize some variables:
+          	var user_ID, password,selected_choice;
+			
+		  // Validate the userID:
           if ($('#user_ID').val().length > 0) {
-          // Get the user_ID:
+          	// Get the user_ID:
              user_ID = $('#user_ID').val();
-        }
-      // Validate the password:
+		  } else {
+			  alert('Your USER ID cannot be empty');
+		  }
+
+      	  // Validate the password:
           if ($('#password').val().length > 0) {
                  password = $('#password').val();
-           } 
+           }  else {
+			   alert('Password cannot be empty');
+		   }
 
+		   //Get selected choice (Student, Professor, Tutor)
     	   selected_choice = $('input[name="role"]:checked').val();
-			
+		   
+		   //check that values are filled properly
 		   console.log(user_ID)
            console.log(password)
            console.log(selected_choice)
  
- 
-
-
-		function makeRequest(){ 
-
-
-				var data = new Object();
-				data.user_ID = user_ID;
-				data.password = password;
-				data.selected_choice = selected_choice;
-						
-		// Create an object of Ajax options:
-				var options = new Object();
-				
-			// Establish each setting:
-				options.data = data;
-				options.type = 'get';
-				options.dataType = 'text';
-				options.success = function(response){
-							
-					// Worked:
-					if (response == 'CORRECT') {
-						$('#login-form').append("we got CORRECT back");
-						console.log('response returned from login-ajax.php says: CORRECT ');
-							
-					} else if (response == 'INCORRECT') {
-						$('#login-form').append("we got CORRECT back");
-						//console.log('response returned from login-ajax.php says: INCORRECT');
-					}
+		   var data = new Object();
+		   data.user_ID = user_ID;
+		   data.password = password;
+		   data.selected_choice = selected_choice;
+		  
+		   $.ajax({
+			url: 'login-ajax.php',
+			type: 'get',
+			data: data,
+			dataType: 'json',
+			success: function(response){
+				var returned  = JSON.parse(response);
+				if(returned == "CORRECT"){
+					console.log("YOU ARE LOGGED IN");
+				} else if(returned == "INCORRECT"){
+					console.log("There was a problem with credentials");
 				}
-		}; 
-          // End of success.
-             options.url = 'login-ajax.php';
-		   
-			 // Perform the request:
-              var request = $.ajax(options);
-			  
-			  request.done(function(msg){
-				  //console.log(msg);
-
-				  
-				  }
-			  })
-			  
-              // Return false to prevent an actual form submission:
-              return false;
-              
-		 }); // End of form submission.
+			}
+		});
 		 
+		// Return false to prevent an actual form submission:
+		 return false;
 
 
 
 
-    }); // End of document ready.
-	
+		   
+
+	});  // END form handler
+
+}); // END .ready
+//=======================================================
+
+
+
+
+//=======================================================
+	/* ALTERNATE WAY TO MAKE AJAX REQUET  */
+
+
+
+
+
+
+
+
+
+//========================================================
 	
 
 	/*
+
+	SNIPPET FOR LATER USE:::
+
 			 // Hide the form:
                 //$('#login-form').hide();
                 
