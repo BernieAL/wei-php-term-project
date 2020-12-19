@@ -71,13 +71,13 @@
 .header{
   position: absolute;
   left: 45%;
-  top: 5%;
+  top: 15%;
 }
 
 .rating2{
 
       position:absolute;
-      top: 70%;
+      top: 55%;
      
 }
 
@@ -89,24 +89,24 @@
 
 .reviewer{
 position: absolute;
-top: 65%;
+top: 50%;
 }
 
 .review-box{
 position: absolute;
-top: 75%;
+top: 60%;
 border: 1px solid;
 }
 
 .reviewer2{
 position: absolute;
-top: 80%;
+top: 70%;
 }
 
 .rating3{
 
       position:absolute;
-      top: 85%;
+      top: 75%;
      
 }
 
@@ -118,7 +118,7 @@ top: 80%;
 
 .review-box2{
 position: absolute;
-top: 90%;
+top: 80%;
 border: 1px solid;
 }
 
@@ -135,7 +135,11 @@ border: 1px solid;
 
   
   <body>
+  <?php
+  include('docs/includes/header.php');
+?>
 
+<div id="review-input-section">
   <h1 class = "header"> Please leave a review! </h1>
 
   <div class = "rating"> 
@@ -157,30 +161,32 @@ border: 1px solid;
       <input type="submit">
 
       </div>
-
-<h4 class = "reviewer">By: JT</h3>
-<div class = "rating2">
-      <a class = "ion-android-star b6"></a>
-      <a class = "ion-android-star b7"></a>
-      <a class = "ion-android-star b8"></a>
-      <a class = "ion-android-star b9"></a>
-      <a class = "ion-android-star b10"></a>
 </div>
 
-<p class = "review-box">One of the best tutors on campus! They explained everything
-thoroughly and I would highly recommend them if you need help with any subject related
-to computer science. Now I feel a lot more confident going into my next test.
-I will definiely book with them again!</p>
+<div id = "reviews">
+    <h4 class = "reviewer">By: JT</h3>
+    <div class = "rating2">
+          <a class = "ion-android-star b6"></a>
+          <a class = "ion-android-star b7"></a>
+          <a class = "ion-android-star b8"></a>
+          <a class = "ion-android-star b9"></a>
+          <a class = "ion-android-star b10"></a>
+    </div>
 
-<h4 class = "reviewer2">By: Jane Doe</h3>
-<div class = "rating3">
-      <a class = "ion-android-star b11"></a>
-      <a class = "ion-android-star b12"></a>
-      <a class = "ion-android-star b13"></a>
-      <a class = "ion-android-star b14"></a>
-      <a class = "ion-android-star b15"></a>
+    <p class = "review-box">One of the best tutors on campus! They explained everything
+    thoroughly and I would highly recommend them if you need help with any subject related
+    to computer science. Now I feel a lot more confident going into my next test.
+    I will definiely book with them again!</p>
+
+    <h4 class = "reviewer2">By: Jane Doe</h3>
+    <div class = "rating3">
+          <a class = "ion-android-star b11"></a>
+          <a class = "ion-android-star b12"></a>
+          <a class = "ion-android-star b13"></a>
+          <a class = "ion-android-star b14"></a>
+          <a class = "ion-android-star b15"></a>
+    </div>
 </div>
-
 <p class = "review-box2">I think they are a great tutor and would recommend them.
 However, the reason why I gave them a four star and not a five star is because they 
 were running behind a bit on schedule so they showed up a little late. However, that was

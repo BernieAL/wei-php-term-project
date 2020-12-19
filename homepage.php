@@ -8,6 +8,20 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>Find a Tutor</title>
+
+    <style>
+      .homepage-header{
+        position: absolute;
+        top: 20%;
+        left: 28%;
+      }
+
+      .container{
+        position: absolute;
+        top: 25%;
+        left: 25%;
+      }
+    </style>
   </head>
   <body>
 
@@ -20,7 +34,7 @@
 
 <br></br>
 <br></br>
-<p text-align="center">Welcome to the official site of finding the best available tutor for you!
+<p class = "homepage-header">Welcome to the official site of finding the best available tutor for you!
 Here at Find a Tutor, we provide you the best tools to find and schedule tutors of your 
 choice! </p>
 
