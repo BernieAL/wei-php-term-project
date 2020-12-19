@@ -21,18 +21,27 @@ $(document).ready(function(){
           	var user_ID, password,selected_choice;
 			
 		  // Validate the userID:
+
           if ($('#user_ID').val().length > 0) {
-          	// Get the user_ID:
-             user_ID = $('#user_ID').val();
+			  user_ID = $('#user_ID').val();
+			  var num_regex = /^[0-9]+$/;
+			  if(!user_ID.match(num_regex)){
+				$('#results').text("ID must be all Numeric.");
+			  }
+            
 		  } else {
 			  alert('Your USER ID cannot be empty');
 		  }
 
       	  // Validate the password:
-          if ($('#password').val().length > 0) {
-                 password = $('#password').val();
-           }  else {
-			   alert('Password cannot be empty');
+          if ($('#password').val().length >= 4) {
+				password = $('#password').val();
+				var space_regex = /\s/;
+				if(password.match(space_regex)){
+					$('#results').text("No spaces in password allowed. Please Try Again");
+				}
+		 }  else {
+			   $('#results').text("Min length of Password is 4 character");
 		   }
 
 		   //Get selected choice (Student, Professor, Tutor)

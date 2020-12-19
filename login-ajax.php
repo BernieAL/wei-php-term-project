@@ -25,6 +25,7 @@ if(isset($_GET['user_ID'], $_GET['password'])){
    
    $userID = $_GET['user_ID'];
    $password = $_GET['password'];
+   if($password )
    $selected_choice = $_GET['selected_choice'];
 
    //perform query to get saved password for user from DB
