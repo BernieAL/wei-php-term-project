@@ -13,7 +13,7 @@
       .homepage-header{
         position: absolute;
         top: 20%;
-        left: 28%;
+        left: 23%;
       }
 
       .container{
@@ -34,9 +34,9 @@
 
 <br></br>
 <br></br>
-<p class = "homepage-header">Welcome to the official site of finding the best available tutor for you!
+<h4 class = "homepage-header">Welcome to the official site of finding the best available tutor for you!
 Here at Find a Tutor, we provide you the best tools to find and schedule tutors of your 
-choice! </p>
+choice! </h4>
 
   <div class="container">
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
